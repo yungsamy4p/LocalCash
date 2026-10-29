@@ -32,14 +32,14 @@ public class MapActivity extends AppCompatActivity {
 
         dbManager = new DatabaseManager(this);
 
-        // Coordenadas iniciales (Santiago, Chile)
+        // Coordenadas iniciales (Santiago)
         GeoPoint startPoint = new GeoPoint(-33.4489, -70.6693);
         map.getController().setZoom(14.0);
         map.getController().setCenter(startPoint);
     }
 
     private void cargarMarcadoresDesdeBD() {
-        // Limpiar marcas anteriores para evitar duplicados al recargar
+
         map.getOverlays().clear();
 
         Cursor cursor = dbManager.obtenerMovimientosConUbicacion();
@@ -60,7 +60,7 @@ public class MapActivity extends AppCompatActivity {
                     marker.setTitle(concepto + " - $" + monto);
                     map.getOverlays().add(marker);
 
-                    // Centrar el mapa en la última coordenada registrada
+
                     map.getController().setCenter(punto);
                     contador++;
                 }
@@ -72,7 +72,7 @@ public class MapActivity extends AppCompatActivity {
             Toast.makeText(this, "No hay movimientos con ubicación guardada", Toast.LENGTH_SHORT).show();
         }
 
-        map.invalidate(); // Forzar el redibujado del mapa
+        map.invalidate();
     }
 
     @Override

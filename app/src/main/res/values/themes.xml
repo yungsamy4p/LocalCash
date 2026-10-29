@@ -1,9 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.LocalCash" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+    <style name="Theme.LocalCash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Colores Primarios -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorOnPrimary">@color/white</item>
 
-    <style name="Theme.LocalCash" parent="Base.Theme.LocalCash" />
+        <!-- Colores de Fondo y Superficie -->
+        <item name="android:windowBackground">@color/card_background</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <!-- Barra de estado -->
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
 </resources>

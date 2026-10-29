@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Paleta de colores LocalCash -->
+    <color name="primary">#205072</color>          <!-- Azul marino oscuro para barras y texto principal -->
+    <color name="primary_variant">#329D9C</color>  <!-- Azul verdoso para botones secundarios y acentos -->
+    <color name="accent">#56C596</color>           <!-- Verde intermedio para elementos destacados -->
+    <color name="mint_light">#7BE495</color>       <!-- Verde claro para tarjetas y estados positivos -->
+    <color name="bg_light">#CFF4D2</color>         <!-- Verde suave para fondos claros -->
+
+    <!-- Colores base de UI -->
+    <color name="white">#FFFFFF</color>
+    <color name="card_background">#F8FDF9</color>  <!-- Fondo suave para tarjetas -->
+    <color name="text_dark">#1A2E3B</color>        <!-- Texto oscuro de alta legibilidad -->
 </resources>

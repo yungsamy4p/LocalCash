@@ -52,7 +52,7 @@ public class BiometricAuthManager {
             }
         });
 
-        // Configurar el prompt para aceptar Huella Dactilar o PIN/Patrón del teléfono
+
         BiometricPrompt.PromptInfo promptInfo = new BiometricPrompt.PromptInfo.Builder()
                 .setTitle("Acceso Seguro - LocalCash")
                 .setSubtitle("Confirme su identidad")

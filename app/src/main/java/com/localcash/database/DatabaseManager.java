@@ -81,5 +81,29 @@ public class DatabaseManager {
     }
 
 
+    // Obtener el total acumulado que deben todos los contactos
+    public double obtenerTotalDeudasAcumuladas() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT SUM(monto_asignado) FROM detalle_deudas WHERE estado_pago = 0", null);
+        double total = 0;
+        if (cursor != null && cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+            cursor.close();
+        }
+        return total;
+    }
+
+    // Obtener el detalle de deudas agrupado por contacto
+    public Cursor obtenerDetalleDeudasPorContacto() {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String query = "SELECT c.nombre, SUM(d.monto_asignado) AS total_deuda " +
+                "FROM detalle_deudas d " +
+                "INNER JOIN contactos c ON d.contacto_id = c.id " +
+                "WHERE d.estado_pago = 0 " +
+                "GROUP BY c.id, c.nombre";
+        return db.rawQuery(query, null);
+    }
+
+
 }
 
